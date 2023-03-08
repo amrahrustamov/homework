@@ -8,6 +8,9 @@
             int count = int.Parse(Console.ReadLine());
             Console.WriteLine("");
             decimal total = 0;
+            int pieceDiscount = 3;
+            int discount = 15;
+            decimal totalDiscountPrice = 0;
             while (count > 0)
             {
             string brandName = "";
@@ -32,22 +35,53 @@
 
                 Console.WriteLine("");
 
-                decimal totalBrandPrice = brandPrice * brandCount;
-                total = total + totalBrandPrice;
 
-                Console.WriteLine("Name of brand : " + brandName);
-                Console.WriteLine("Price o brand : " + brandPrice + "(AZN)");
-                Console.WriteLine("Count of brand : " + brandCount);
-                Console.WriteLine("Total price : " + totalBrandPrice + "(AZN)");
-                Console.WriteLine("######################################");
+
+
+
+
+                if (brandCount > pieceDiscount)
+                {
+                    totalDiscountPrice = (brandPrice * brandCount);
+                    totalDiscountPrice = totalDiscountPrice - (totalDiscountPrice * discount / 100);
+                    total = total + totalDiscountPrice;
+                    Console.WriteLine("Name of brand : " + brandName);
+                    Console.WriteLine("Price o brand : " + brandPrice + "(AZN)");
+                    Console.WriteLine("Count of brand : " + brandCount);
+                    Console.WriteLine("Discount : " + discount + "%");
+                    Console.WriteLine("Total price : " + totalDiscountPrice + "(AZN)");
+                    Console.WriteLine("######################################");
+
+                }
+                else
+                {
+                    decimal totalBrandPrice = brandPrice * brandCount;
+                    total = total + totalBrandPrice;
+                    Console.WriteLine("Name of brand : " + brandName);
+                    Console.WriteLine("Price o brand : " + brandPrice + "(AZN)");
+                    Console.WriteLine("Count of brand : " + brandCount);
+                    Console.WriteLine("Discount : NO");
+                    Console.WriteLine("Total price : " + totalBrandPrice + "(AZN)");
+                    Console.WriteLine("######################################");
+
+                }
+
 
                 count -= 1;
+
             }
 
             Console.Write("Yekun qiymet : ");
             Console.WriteLine(total);
 
+
+
+
+
             Console.ReadLine();
+
+
+            
 
         }
     }
