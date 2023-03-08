@@ -7,14 +7,24 @@
             Console.Write("Brandin sayi : ");
             int count = int.Parse(Console.ReadLine());
             Console.WriteLine("");
-            string brandName;
             decimal total = 0;
             while (count > 0)
             {
+            string brandName = "";
                 
-
+                while (true)
+                {
                 Console.Write("Brandin adi : ");
                 brandName = Console.ReadLine();
+                    if (brandName.Length > 5 && brandName.Length < 15)
+                    {
+                        break;
+                    }
+
+                }
+
+
+
                 Console.Write("Brandin qiymeti : ");
                 decimal brandPrice = decimal.Parse(Console.ReadLine());
                 Console.Write("Say : ");
