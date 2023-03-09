@@ -40,7 +40,7 @@
 
 
 
-                if (brandCount > pieceDiscount)
+                if (brandCount >= pieceDiscount)
                 {
                     totalDiscountPrice = (brandPrice * brandCount);
                     totalDiscountPrice = totalDiscountPrice - (totalDiscountPrice * discount / 100);
